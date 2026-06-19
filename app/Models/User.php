@@ -16,7 +16,7 @@ class User extends Authenticatable
 {
     /** @use HasFactory<UserFactory> */
     use HasFactory, Notifiable;
-
+    //created by Tonmoy
     /**
      * Get the attributes that should be cast.
      *

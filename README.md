@@ -65,7 +65,6 @@ Displays all soft-deleted teachers with:
 | GET    | /suspended/{id} | Permanently delete teacher |
 
 ## Learning Objectives
-
 This project was built to practice:
 
 * Laravel CRUD Operations
