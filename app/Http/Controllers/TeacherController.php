@@ -24,6 +24,15 @@ class TeacherController extends Controller
 
     public function create(Request $request)
     {
+
+        $request->validate([
+            'name' => 'required|string|max:50',
+            'email' => 'required|email|unique:teachers',
+            'age' => 'required|integer|min:18|max:60',
+            'role' => 'required|string',
+            'gender' => 'required|string|in:m,f',
+        ]);
+
         $teacher = new Teacher();
         $teacher->name = $request->name;
         $teacher->email = $request->email;

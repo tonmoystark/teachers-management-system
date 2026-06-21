@@ -7,7 +7,29 @@
 <h1 class="text-3xl font-bold mb-6">
     Add New Teacher
 </h1>
+@if($errors->any())
+    <div class="bg-red-50 border-l-4 border-red-500 p-4 rounded-lg shadow-sm mb-6">
 
+        <div class="flex items-center gap-2 mb-2">
+            <span class="text-red-600 text-xl">⚠️</span>
+
+            <h3 class="font-semibold text-red-700">
+                Validation Errors
+            </h3>
+        </div>
+
+        <ul class="space-y-2">
+
+            @foreach($errors->all() as $error)
+                <li class="text-red-600">
+                    • {{ $error }}
+                </li>
+            @endforeach
+
+        </ul>
+
+    </div>
+@endif
 <form action="/add" method="POST" class="bg-white p-6 rounded-lg shadow space-y-4">
 
     @csrf
@@ -22,7 +44,7 @@
             name="name"
             class="w-full border rounded-lg px-4 py-2"
             placeholder="Enter teacher name"
-            required
+            
         >
     </div>
 
@@ -36,7 +58,7 @@
             name="email"
             class="w-full border rounded-lg px-4 py-2"
             placeholder="Enter teacher email"
-            required
+            
         >
     </div>
 
@@ -50,7 +72,7 @@
             name="age"
             class="w-full border rounded-lg px-4 py-2"
             placeholder="Enter age"
-            required
+            
         >
     </div>
 
@@ -64,7 +86,7 @@
             name="role"
             class="w-full border rounded-lg px-4 py-2"
             placeholder="Enter role"
-            required
+            
         >
     </div>
 
@@ -76,7 +98,7 @@
         <select
             name="gender"
             class="w-full border rounded-lg px-4 py-2"
-            required
+            
         >
             <option value="">Select Gender</option>
             <option value="M">Male</option>
