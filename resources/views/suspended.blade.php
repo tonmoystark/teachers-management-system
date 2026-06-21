@@ -34,7 +34,7 @@
     </td>
 
     <td class="px-4 py-3 text-center">
-        {{ $teacher->Role }}
+        {{ $teacher->role }}
     </td>
 
     <td class="px-4 py-3 text-center">
