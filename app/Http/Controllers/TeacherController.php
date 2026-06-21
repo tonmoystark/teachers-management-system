@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\AddTeacherRequest;
+use App\Http\Requests\EditTeacherRequest;
 use App\Models\Teacher;
 use Illuminate\Http\Request;
 
@@ -44,7 +45,7 @@ class TeacherController extends Controller
         return view('edit', compact('teacher'));
     }
 
-    public function update(Request $request, int $id)
+    public function update(EditTeacherRequest $request, int $id)
     {
         $teacher = Teacher::findOrFail($id);
         $teacher->name = $request->name;
