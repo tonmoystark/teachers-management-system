@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AddTeacherRequest;
 use App\Models\Teacher;
 use Illuminate\Http\Request;
 
@@ -22,16 +23,8 @@ class TeacherController extends Controller
         return view('home', compact('teachers'));
     }
 
-    public function create(Request $request)
+    public function create(AddTeacherRequest $request)
     {
-
-        $request->validate([
-            'name' => 'required|string|max:50',
-            'email' => 'required|email|unique:teachers',
-            'age' => 'required|integer|min:18|max:60',
-            'role' => 'required|string',
-            'gender' => 'required|string|in:m,f',
-        ]);
 
         $teacher = new Teacher();
         $teacher->name = $request->name;
