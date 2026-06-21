@@ -33,7 +33,7 @@
         {{ $teacher->age }}
     </td>
 
-    <td class="px-4 py-3 text-center">
+    <td class="px-4 py-3">
         {{ $teacher->role }}
     </td>
 

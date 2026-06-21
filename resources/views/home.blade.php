@@ -36,7 +36,7 @@
                 <th class="px-4 py-3 text-left">Name</th>
                 <th class="px-4 py-3 text-left">Email</th>
                 <th class="px-4 py-3 text-left">Age</th>
-                <th class="px-4 py-3 text-left">Role</th>
+                <th class="px-4 py-3 text-center">Role</th>
                 <th class="px-4 py-3 text-left">Gender</th>
                 <th class="px-4 py-3 text-center">Actions</th>
             </tr>
