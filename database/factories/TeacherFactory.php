@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Department;
 use App\Models\Model;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -42,6 +43,7 @@ class TeacherFactory extends Factory
             ),
             'age' => fake()->numberBetween(20, 60),
             'gender' => fake()->randomElement(['M', 'F']),
+            'department_id' => Department::inRandomOrder()->first()->id,
         ];
     }
 }

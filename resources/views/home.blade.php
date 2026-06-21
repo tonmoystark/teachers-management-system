@@ -35,6 +35,7 @@
             <tr>
                 <th class="px-4 py-3 text-left">Name</th>
                 <th class="px-4 py-3 text-left">Email</th>
+                <th class="px-4 py-3 text-left">Department</th>
                 <th class="px-4 py-3 text-left">Age</th>
                 <th class="px-4 py-3 text-center">Role</th>
                 <th class="px-4 py-3 text-left">Gender</th>
@@ -53,6 +54,9 @@
 
     <td class="px-4 py-3">
         {{ $teacher->email }}
+    </td>
+    <td class="px-4 py-3">
+        {{ $teacher->department->name }}
     </td>
 
     <td class="px-4 py-3 text-center">

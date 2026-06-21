@@ -27,7 +27,7 @@ class AddTeacherRequest extends FormRequest
             'email' => 'required|email|unique:teachers',
             'age' => 'required|integer|min:18|max:60',
             'role' => 'required|string',
-            'gender' => 'required|string|in:m,f',
+            'gender' => 'required|string|in:M,F',
         ];
     }
     public function messages()

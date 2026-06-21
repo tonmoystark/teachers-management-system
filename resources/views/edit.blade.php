@@ -61,6 +61,22 @@
             
         >
     </div>
+    <div>
+        <label class="block mb-2 font-medium">
+            Department
+        </label>
+
+        <select name="department_id">
+    @foreach ($departments as $department)
+        <option
+            value="{{ $department->id }}"
+            {{ $teacher->department_id == $department->id ? 'selected' : '' }}
+        >
+            {{ $department->name }}
+        </option>
+    @endforeach
+</select>
+    </div>
 
     <div>
         <label class="block mb-2 font-medium">
@@ -100,11 +116,11 @@
             class="w-full border rounded-lg px-4 py-2"
             
         >
-            <option value="M" {{ $teacher->gender == 'M' ? 'selected' : '' }}>
+            <option value="M">
                 Male
             </option>
 
-            <option value="F" {{ $teacher->gender == 'F' ? 'selected' : '' }}>
+            <option value="F">
                 Female
             </option>
         </select>

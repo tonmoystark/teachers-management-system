@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::controller(TeacherController::class)->group(function () {
     Route::get('/', 'index');
-    Route::view('/add', 'add');
+    Route::get('/add', 'add');
     Route::post('/add', 'create');
     Route::get('/edit/{id}', 'edit');
     Route::post('edit/{id}', 'update');

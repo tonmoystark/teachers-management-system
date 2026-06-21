@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\AddTeacherRequest;
 use App\Http\Requests\EditTeacherRequest;
+use App\Models\Department;
 use App\Models\Teacher;
 use Illuminate\Http\Request;
 
@@ -33,16 +34,25 @@ class TeacherController extends Controller
         $teacher->age = $request->age;
         $teacher->role = $request->role;
         $teacher->gender = $request->gender;
+        $teacher->department_id = $request->department_id;
         $teacher->save();
 
         return redirect('/');
     }
 
+    public function add()
+    {
+        $departments = Department::all();
+
+        return view('add', compact('departments'));
+    }
+
     public function edit(int $id)
     {
         $teacher = Teacher::findOrFail($id);
+        $departments = Department::all();
 
-        return view('edit', compact('teacher'));
+        return view('edit', compact('teacher', 'departments'));
     }
 
     public function update(EditTeacherRequest $request, int $id)
@@ -53,6 +63,7 @@ class TeacherController extends Controller
         $teacher->age = $request->age;
         $teacher->role = $request->role;
         $teacher->gender = $request->gender;
+        $teacher->department_id = $request->department_id;
         $teacher->update();
 
         return redirect('/');

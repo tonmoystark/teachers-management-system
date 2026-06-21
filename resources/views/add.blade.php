@@ -61,6 +61,22 @@
             
         >
     </div>
+    <div>
+    <label class="block mb-2 font-medium text-slate-700">
+        Department
+    </label>
+
+    <select
+        name="department_id"
+        class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+    >
+        @foreach ($departments as $department)
+            <option value="{{ $department->id }}">
+                {{ $department->name }}
+            </option>
+        @endforeach
+    </select>
+</div>
 
     <div>
         <label class="block mb-2 font-medium">
